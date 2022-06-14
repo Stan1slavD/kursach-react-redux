@@ -1,0 +1,9 @@
+https://api.hh.ru/
+
+https://api.hh.ru/specializations
+
+
+https://hh.ru/oauth/token
+
+
+https://api.hh.ru/vacancies?area=1806&specialization=1
