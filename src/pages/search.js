@@ -19,22 +19,14 @@ import Grid from "@mui/material/Grid";
 import { addTextAction } from "../redux/filterReducer";
 import {
   Button,
-  Navbar,
   Container,
   Nav,
   Row,
   Col,
-  Form,
   FormControl,
+  Pagination,
 } from "react-bootstrap";
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
 
 function Search() {
   useEffect(() => {});
@@ -43,37 +35,36 @@ function Search() {
   const cID = useSelector((state) => state.filterReducer.cityID);
   const vac = useSelector((state) => state.searchReducer.vacancies);
   const text = useSelector((state) => state.filterReducer.text);
+  const [page, setPage]=useState(1);
+  const [maxPages, setMaxPages]=useState(1)
 
   function findBtnClick() {
-    console.log(1)
-    console.log('')
-    console.log(1)
-
-    dispatch(
-      findVacancies(
-        rID,
-        cID,
-        text
-      )
-    );
+    dispatch(findVacancies(rID, cID, text, page-1));
   }
 
   return (
-    <Container>
+    
+    <Container >
       <div className="filter p-3 mt-5">
         <FormControl
           type="search"
           placeholder="Искать..."
           className="me-2"
           aria-label="Search"
-          onChange={(e) => {dispatch(addTextAction(e.target.value))}}
+          onChange={(e) => {
+            dispatch(addTextAction(e.target.value));
+          }}
         />
         <Row>
           <Col>
             <Filter></Filter>
           </Col>
           <Col className="text-end">
-            <Button variant="outline-success" className="mt-3" onClick={findBtnClick}>
+            <Button
+              //variant="outline-success"
+              className="mt-3 btn"
+              onClick={findBtnClick}
+            >
               Найти
             </Button>
           </Col>
@@ -81,14 +72,27 @@ function Search() {
 
         <hr className="mt-5"></hr>
       </div>
-      <Row>
+      <Row className="justify-content-center">
         {vac.map((item) => {
           return (
-            <Col xs={6} className="text-center">
+            <Col xs={4} className="text-center m-3">
               <SingleCard key={item.id} data={item}></SingleCard>
             </Col>
           );
         })}
+      </Row>
+     <Row className="justify-content-center">
+        <Col xs={6} >
+      <Pagination>
+        <Pagination.First onClick={()=>{setPage(1)}} />
+        <Pagination.Prev onClick={()=>{if(page!==1)setPage(page-1)}}/>
+        {[1, 2, 3, 4, 5,6].map((item) => {
+          return <Pagination.Item active={item === page}  onClick={()=>{setPage(item);dispatch(findVacancies(rID, cID, text, page-1));setTimeout(()=>window.scrollTo({ top: 0, behavior: 'smooth' }), 500);}} >{item}</Pagination.Item>;
+        })}
+        <Pagination.Next onClick={()=>{setPage(page+1)}}/>
+        <Pagination.Last onClick={()=>{setPage(page-1)}}/>
+      </Pagination>
+      </Col>
       </Row>
     </Container>
   );

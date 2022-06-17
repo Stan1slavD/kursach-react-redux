@@ -15,13 +15,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
       <>
+      <div  className="grad">
       <AppBar></AppBar>
       <Routes>
         <Route path="/" element={<Main/>}/>
         <Route path="/search" element={<Search/>}/>
-        <Route path="/search" element={<Favorites/>}/>
+        <Route path="/favorites" element={<Favorites/>}/>
       </Routes>
-      
+      </div>
       </>
 
     // <div className="App">

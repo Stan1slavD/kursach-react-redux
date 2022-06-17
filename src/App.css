@@ -56,3 +56,13 @@ margin-top: 100px;
   border: 6px;
   border-color: #282c34;
 }
+
+.grad{
+  background: linear-gradient(to top, #2e3661, #a3aff3);
+}
+
+.text{
+  white-space: nowrap; /* Текст не переносится */
+  overflow: hidden; /* Обрезаем всё за пределами блока */
+  text-overflow: ellipsis; /* Добавляем многоточие */
+}

@@ -52,7 +52,6 @@
 //   },
 // }));
 
-
 // export default function SearchAppBar() {
 //     const dispatch = useDispatch();
 //   return (
@@ -91,22 +90,35 @@
 //     </Box>
 //   );
 // }
-import { Routes,Route, Link} from "react-router-dom";
-import React from 'react';
-import { Button,Navbar,Container,Nav, } from 'react-bootstrap';
- function AppBar() {
-  return (   
-     <Navbar bg="dark" variant="dark">
-  <Container>
-  <Navbar.Brand href="#home">HH4DEV</Navbar.Brand>
-  <Nav className="">
-    <Link to="/" className="ms-5 btn btn-primary"> Home</Link>
-    <Link  to="/search" className="ms-5 btn btn-primary">  Search</Link>
-    <Link  to="/favorites" className="ms-5 btn btn-primary"> Favorites</Link>
-    <Link  to="/about" className="ms-5 btn btn-primary"> About</Link>
-  </Nav>
-  </Container>
-</Navbar>);
- }
- 
- export default AppBar;
+import { Routes, Route, Link } from "react-router-dom";
+import React from "react";
+import { Button, Navbar, Container, Nav } from "react-bootstrap";
+function AppBar() {
+  return (
+    <Navbar bg="dark" variant="dark">
+      <Container>
+        <Navbar.Brand href="#home">HH4DEV</Navbar.Brand>
+        <Nav className="">
+          <Link to="/" className="ms-5 btn btn-primary">
+            {" "}
+            Home
+          </Link>
+          <Link to="/search" className="ms-5 btn btn-primary">
+            {" "}
+            Search
+          </Link>
+          <Link to="/favorites" className="ms-5 btn btn-primary">
+            {" "}
+            Favorites
+          </Link>
+          <Link to="/about" className="ms-5 btn btn-primary">
+            {" "}
+            About
+          </Link>
+        </Nav>
+      </Container>
+    </Navbar>
+  );
+}
+
+export default AppBar;
