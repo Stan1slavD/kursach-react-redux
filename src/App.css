@@ -50,3 +50,9 @@ margin-top: 100px;
   background-color: burlywood;
   border-radius: 5px;
 }
+
+.filter{
+  border-radius: 30px;
+  border: 6px;
+  border-color: #282c34;
+}

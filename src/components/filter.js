@@ -5,6 +5,17 @@ import { addCityID, addRegionID, addValueAction } from "../redux/filterReducer";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { regs } from "../regs";
+import {
+  Button,
+  Navbar,
+  Container,
+  Nav,
+  Row,
+  Col,
+  Form,
+  FormControl
+} from "react-bootstrap";
+
 
 function Filter() {
   const [regID, setRegID] = useState(0);
@@ -30,7 +41,7 @@ function Filter() {
 
   //add ids for city and region from filter
   return (
-    <div>
+    <Row className="mt-3">
       <Autocomplete
         disablePortal
         options={regs}
@@ -48,7 +59,7 @@ function Filter() {
         renderInput={(params) => <TextField {...params} label="Город" />}
         onBlur={(e) => findCityID(e)}
       />
-    </div>
+    </Row>
   );
 }
 

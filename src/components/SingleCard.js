@@ -4,20 +4,11 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import CardHeader from "@mui/material/CardHeader";
-import CardMedia from "@mui/material/CardMedia";
-import Avatar from "@mui/material/Avatar";
-import IconButton from "@mui/material/IconButton";
-import { red } from "@mui/material/colors";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import NoPhotographyIcon from "@mui/icons-material/NoPhotography";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 
 function SingleCard({ data }) {
+  //console.log(data)
   let salaryString = "";
   if (data.salary !== null) {
     salaryString = ` ${data.salary.from}-${data.salary.to}`;
@@ -37,7 +28,7 @@ function SingleCard({ data }) {
                   height: 150,
                   width: 350,
                 }}
-                alt="The house from the offer."
+                
                 src={Object.values(data.employer.logo_urls)[2]}
               />
             </Box>
