@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/kursach-react-redux/static/css/main.f86ec560.css",
+    "main.js": "/kursach-react-redux/static/js/main.592bee52.js",
+    "static/js/787.370b10b4.chunk.js": "/kursach-react-redux/static/js/787.370b10b4.chunk.js",
+    "static/media/pixeltrue-web-development.png": "/kursach-react-redux/static/media/pixeltrue-web-development.3d9bb53701fcb43a841d.png",
+    "index.html": "/kursach-react-redux/index.html",
+    "main.f86ec560.css.map": "/kursach-react-redux/static/css/main.f86ec560.css.map",
+    "main.592bee52.js.map": "/kursach-react-redux/static/js/main.592bee52.js.map",
+    "787.370b10b4.chunk.js.map": "/kursach-react-redux/static/js/787.370b10b4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f86ec560.css",
+    "static/js/main.592bee52.js"
+  ]
+}
