@@ -1,121 +1,13 @@
-// import React from "react";
-// import Card from "@mui/material/Card";
-// import CardActions from "@mui/material/CardActions";
-// import CardContent from "@mui/material/CardContent";
-// import Button from "@mui/material/Button";
-// import Typography from "@mui/material/Typography";
-// import Box from "@mui/material/Box";
-// import Grid from "@mui/material/Grid";
-
-// function SingleCard({ data }) {
-//   //console.log(data)
-//   let salaryString = "";
-//   if (data.salary !== null) {
-//     salaryString = ` ${data.salary.from}-${data.salary.to}`;
-//   }
-
-//   if (data.employer.logo_urls !== null)
-//     return (
-//       <>
-//         <Grid item xs={4}>
-//           <Card
-//             sx={{ maxWidth: 350, minWidth: 350, maxHeight: 350, minWidth: 350 }}
-//           >
-//             <Box sx={{ width: 350, height: 150 }}>
-//               <Box
-//                 component="img"
-//                 sx={{
-//                   height: 150,
-//                   width: 350,
-//                 }}
-
-//                 src={Object.values(data.employer.logo_urls)[2]}
-//               />
-//             </Box>
-//             <CardContent>
-//               <Typography
-//                 gutterBottom
-//                 variant="h5"
-//                 component="h2"
-//                 className="test"
-//               >
-//                 {data.name}
-//               </Typography>
-//               <Box className="test">
-//                 <Typography className="test">{salaryString}</Typography>
-//               </Box>
-//             </CardContent>
-//             <CardActions>
-//               <Button size="small" color="primary">
-//                 View
-//               </Button>
-//               <Button size="small" color="primary">
-//                 Edit
-//               </Button>
-//             </CardActions>
-//           </Card>
-//         </Grid>
-//       </>
-//     );
-//   else
-//     return (
-//       <>
-//         <Grid item xs={4}>
-//           <Card
-//             sx={{ maxWidth: 350, minWidth: 350, maxHeight: 350, minWidth: 350 }}
-//           >
-//             <Box sx={{ width: 350, height: 150, border: 1 }}>
-//               <Box
-//                 component="img"
-//                 sx={{
-//                   height: 150,
-//                   width: 200,
-//                 }}
-//                 src="https://img.icons8.com/ios/344/no-image.png"
-//               />
-//             </Box>
-//             <CardContent>
-//               <Typography gutterBottom variant="h5" component="h2">
-//                 {data.name}
-//               </Typography>
-//               <Typography>Вакансий открыто: {data.open_vacancies}</Typography>
-//             </CardContent>
-//             <CardActions>
-//               <Button size="small" color="primary">
-//                 View
-//               </Button>
-//               <Button size="small" color="primary">
-//                 Edit
-//               </Button>
-//             </CardActions>
-//           </Card>
-//         </Grid>
-//       </>
-//     );
-// }
-
-// export default SingleCard;
-
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 import "../App.css";
 import {
   addFavoriteAction,
   deleteFavoriteAction,
 } from "../redux/favoriteReducer";
-import {
-  Button,
-  Navbar,
-  Container,
-  Nav,
-  Row,
-  Col,
-  Form,
-  FormControl,
-  Pagination,
-  Card,
-} from "react-bootstrap";
+import { Button, Row, Col, Card } from "react-bootstrap";
 
 function SingleCard({ data }) {
   const [color, setColor] = useState("black");
@@ -160,9 +52,12 @@ function SingleCard({ data }) {
           <Row>
             <Col xs={4}></Col>
             <Col xs={4} className="text-end ">
-              <Button clsassName="w-100" variant="primary">
-                Подробнее..
-              </Button>
+              <Link to="/vacancy">
+                {" "}
+                <Button clsassName="w-100" variant="primary">
+                  Подробнее..
+                </Button>
+              </Link>
             </Col>
             <Col xs={2}></Col>
             <Col xs={1} className="text-end p-2">

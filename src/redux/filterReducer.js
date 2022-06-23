@@ -4,7 +4,7 @@ const initialState = {
   cities: [],
   regionID: 0,
   cityID: 0,
-  text:''
+  text: "",
 };
 
 const ADD = "ADD";
@@ -13,7 +13,6 @@ const GETCITIES = "GETCITIES";
 const ADDCITYID = "ADDCITYID";
 const ADDREGIONID = "ADDREGIONID";
 const ADDTEXT = "ADDTEXT";
-
 
 export const filterReducer = (state = initialState, action) => {
   console.log("payload: ", action.payload);
@@ -55,7 +54,7 @@ export const filterReducer = (state = initialState, action) => {
   }
 };
 
-export const addTextAction=(payload)=>({type:ADDTEXT, payload})
+export const addTextAction = (payload) => ({ type: ADDTEXT, payload });
 export const addValueAction = (payload) => ({ type: ADD, payload });
 export const getRegionsAction = (payload) => ({ type: GETREGIONS, payload });
 export const getCitiesAction = (payload) => ({ type: GETCITIES, payload });

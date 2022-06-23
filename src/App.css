@@ -58,7 +58,9 @@ margin-top: 100px;
 }
 
 .grad{
-  background: linear-gradient(to top, #2e3661, #a3aff3);
+  background: linear-gradient(to top, #212529, #CADEF3);
+  min-height: 1000px;
+  height: 100%;
 }
 
 .text{

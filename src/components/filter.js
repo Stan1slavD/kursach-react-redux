@@ -1,20 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { addCityID, addRegionID, addValueAction } from "../redux/filterReducer";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { regs } from "../regs";
-import {
-  Button,
-  Navbar,
-  Container,
-  Nav,
-  Row,
-  Col,
-  Form,
-  FormControl,
-} from "react-bootstrap";
+import { Row } from "react-bootstrap";
 
 function Filter() {
   const [regID, setRegID] = useState(0);
